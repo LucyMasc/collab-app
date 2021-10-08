@@ -1,4 +1,5 @@
 # added
+# require ''
 require 'simplecov'
 SimpleCov.start do
   add_group 'Config', 'config'
