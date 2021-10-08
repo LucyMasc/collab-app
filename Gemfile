@@ -39,7 +39,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # added
   gem 'rspec-rails', '~> 5.0.0'
-  gem 'factory_bot'
+  gem 'factory_bot_rails'
   gem "faker", "~> 2.19"
 
 end

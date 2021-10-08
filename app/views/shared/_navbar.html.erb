@@ -1,7 +1,7 @@
 <nav class="navbar navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Navbar</a>
   <% if user_signed_in?  %>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button id="user-settings" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -30,7 +30,7 @@
     </div>
   <% else %>
     <ul>
-      <li ><%= link_to 'Login', new_user_session_path %></li>
+      <li ><%= link_to 'Login', new_user_session_path, id:"login" %></li>
       <li ><%= link_to 'Signup', new_user_registration_path %></li>
     </ul>
   <% end %>

@@ -1,5 +1,5 @@
 # added
-# require ''
+# require 'factory_bot'
 require 'simplecov'
 SimpleCov.start do
   add_group 'Config', 'config'
@@ -52,6 +52,8 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
+
+
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false
 
@@ -82,4 +84,18 @@ RSpec.configure do |config|
       with.library :rails
     end
   end
+
+  # config.include Request::JsonHelpers, type: :request
+
+
+# Devise test helpers
+  include Warden::Test::Helpers
+  Warden.test_mode!
 end
+
+Capybara.register_driver :headless_chrome do |app|
+  options = Selenium::WebDriver::Chrome::Options.new(args: %w[no-sandbox headless disable-gpu window-size=1400,900])
+  Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
+end
+Capybara.save_path = Rails.root.join('tmp/capybara')
+Capybara.javascript_driver = :headless_chrome
