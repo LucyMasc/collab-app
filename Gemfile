@@ -29,12 +29,19 @@ gem 'devise'
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'simple_form'
+
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # added
+  gem 'rspec-rails', '~> 5.0.0'
+  gem 'factory_bot'
+  gem "faker", "~> 2.19"
+
 end
 
 group :development do
@@ -52,7 +59,13 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  # added
+  gem 'rails-controller-testing'
+  gem 'database_cleaner-active_record'
+  gem "shoulda-matchers", "~> 5.0"
+  gem "simplecov", "~> 0.21.2", require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
