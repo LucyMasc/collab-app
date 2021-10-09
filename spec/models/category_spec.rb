@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'has_many posts' do
+    association = described_class.reflect_on_association(:posts).macro
+    expect(association).to eql(:has_many)
+  end
+
+  # or using should to make it more readable:
+  # it { should have_many(:posts)}
 end
