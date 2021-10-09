@@ -13,6 +13,6 @@ RSpec.describe 'Logout', type: :feature do
     click_link 'Log out'
     save_and_open_screenshot
     # expect(page).to have_selector('nav a', text: 'Login')
-    expect(page).to have_link "Login"
+    expect(page).to have_text "Login"
   end
 end
